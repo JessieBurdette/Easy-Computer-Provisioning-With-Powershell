@@ -52,14 +52,10 @@ $AppList = @(
     "*Microsoft.XboxSpeechToTextOverlay*"
     "*Microsoft.XboxIdentityProvider*"
     "*Microsoft.XboxGameOverlay*"
-    "*Microsoft.YourPhone*"
     "*Microsoft.WindowsPhone*"
     "*Microsoft.549981C3F5F10*"
-    "*Microsoft.Xbox.TCUI*"
-    "*Microsoft.XboxGamingOverlay*"
-    "*Microsoft.XboxGameCallableUI*"
 )
-
+$(
 foreach ($App in $AppList) {
     Get-AppxPackage -Name $App | Remove-AppxPackage -Allusers -ErrorAction SilentlyContinue
-}    
+}) *>&1 > ".\Lastrun.log"
