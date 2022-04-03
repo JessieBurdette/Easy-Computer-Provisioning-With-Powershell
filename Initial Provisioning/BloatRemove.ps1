@@ -54,6 +54,8 @@ $AppList = @(
     "*Microsoft.XboxGameOverlay*"
     "*Microsoft.WindowsPhone*"
     "*Microsoft.549981C3F5F10*"
+    "*Microsoft.XboxGamingOverlay*"
+    "*Microsoft.YourPhone*"
 )
 $(
 foreach ($App in $AppList) {
