@@ -1,7 +1,6 @@
 # This Script Removes all possible bloatware from a fresh windows 10 install #
 # Items can be commented out of the list to stop removal #
 Import-Module Appx
-Import-Module Get-AppxPackage
 $AppList = @(
     "*Microsoft.3dbuilder*"
     "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
@@ -53,10 +52,14 @@ $AppList = @(
     "*Microsoft.XboxSpeechToTextOverlay*"
     "*Microsoft.XboxIdentityProvider*"
     "*Microsoft.XboxGameOverlay*"
+    "*Microsoft.YourPhone*"
     "*Microsoft.WindowsPhone*"
     "*Microsoft.549981C3F5F10*"
+    "*Microsoft.Xbox.TCUI*"
+    "*Microsoft.XboxGamingOverlay*"
+    "*Microsoft.XboxGameCallableUI*"
 )
 
 foreach ($App in $AppList) {
-    Get-AppxPackage -allusers -Name $App | Remove-AppxPackage -ErrorAction SilentlyContinue
+    Get-AppxPackage -Name $App | Remove-AppxPackage -Allusers -ErrorAction SilentlyContinue
 }    
